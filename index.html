@@ -6,7 +6,7 @@
     
     <!-- SEO: Title & Description -->
     <title>Trevor Simcox, MD | Shoulder & Elbow Surgeon | UTHealth Houston</title>
-    <meta name="description" content="Trevor Simcox, MD is an Assistant Professor and Fellowship-trained Orthopedic Surgeon specializing in reconstructive shoulder, elbow, and sports medicine at UTHealth Houston.">
+    <meta name="description" content="Trevor Simcox, MD is an Assistant Professor and Fellowship-trained Orthopedic Surgeon specializing in reconstructive shoulder, elbow, and sports medicine at UTHealth Houston. Locations in Cypress and The Woodlands.">
     <link rel="canonical" href="https://www.trevorsimcoxmd.com/">
 
     <!-- Social Media / Open Graph -->
@@ -15,10 +15,10 @@
     <meta property="og:description" content="Fellowship-trained Shoulder and Elbow specialist providing personalized care for sports injuries, trauma, and joint replacement.">
     <meta property="og:url" content="https://www.trevorsimcoxmd.com/">
     
-    <!-- Favicon Placeholders (You can generate these later at favicon.io) -->
+    <!-- Favicon Placeholders -->
     <link rel="icon" href="favicon.ico">
 
-    <!-- JSON-LD Schema for Physicians (CRITICAL for Medical SEO) -->
+    <!-- JSON-LD Schema for Physicians -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -30,19 +30,41 @@
         "@type": "MedicalOrganization",
         "name": "McGovern Medical School at UTHealth Houston"
       },
-      "telephone": "+1-713-486-7500",
       "url": "https://www.trevorsimcoxmd.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Houston",
-        "addressRegion": "TX",
-        "addressCountry": "US"
-      },
+      "sameAs": ["https://med.uth.edu/ortho/apptnow/"],
       "alumni": [
         { "@type": "CollegeOrUniversity", "name": "University of California, Los Angeles" },
         { "@type": "CollegeOrUniversity", "name": "Keck School of Medicine of USC" },
         { "@type": "CollegeOrUniversity", "name": "NYU Grossman Long Island School of Medicine" },
         { "@type": "CollegeOrUniversity", "name": "University of Florida" }
+      ],
+      "location": [
+        {
+          "@type": "MedicalClinic",
+          "name": "UT Ortho at Cypress",
+          "telephone": "+1-713-486-5750",
+          "faxNumber": "+1-713-486-0871",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "27700 Northwest Freeway Suite 200",
+            "addressLocality": "Cypress",
+            "addressRegion": "TX",
+            "postalCode": "77433"
+          }
+        },
+        {
+          "@type": "MedicalClinic",
+          "name": "UT Ortho at Memorial Hermann | Rockets Sports Medicine Institute",
+          "telephone": "+1-713-486-8800",
+          "faxNumber": "+1-281-367-1323",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "9305 Pinecroft Drive, Suite 400",
+            "addressLocality": "The Woodlands",
+            "addressRegion": "TX",
+            "postalCode": "77380"
+          }
+        }
       ]
     }
     </script>
@@ -50,49 +72,82 @@
     <style>
         /* Modern, Clean Medical Styling */
         :root {
-            --primary: #003057; /* Deep Blue (Professional) */
+            --primary: #003057; /* Deep Blue */
             --secondary: #0077be; /* Lighter Blue */
+            --accent: #e37222; /* UT Orange for Call to Action */
             --text: #333;
             --bg: #f9f9f9;
             --white: #ffffff;
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: var(--text); margin: 0; background: var(--bg); }
+        
+        /* Font updated to Arial */
+        body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: var(--text); margin: 0; background: var(--bg); }
         
         /* Layout */
         .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         header { background: var(--white); padding: 40px 20px; text-align: center; border-bottom: 4px solid var(--primary); }
-        h1 { margin: 0; color: var(--primary); font-size: 2.2rem; }
+        
+        /* Header Title updated to Uppercase via CSS just in case */
+        h1 { margin: 0; color: var(--primary); font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; }
+        
         .credentials { color: var(--secondary); font-weight: 600; margin-top: 10px; font-size: 1.1rem; }
         .sub-header { color: #666; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; }
 
         /* CTA Button */
-        .cta-container { margin: 25px 0; }
-        .btn { background-color: var(--primary); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; display: inline-block; }
+        .cta-container { margin: 25px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .btn { background-color: var(--primary); color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; display: inline-block; font-size: 0.9rem; }
         .btn:hover { background-color: var(--secondary); }
+        
+        /* Special "Book Now" Button Style */
+        .btn-book { background-color: var(--accent); }
+        .btn-book:hover { background-color: #c55d1b; }
 
         /* Content Sections */
         section { background: var(--white); padding: 30px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        h2 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h2 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0; }
+        h3 { color: var(--secondary); font-size: 1.2rem; margin-top: 25px; margin-bottom: 10px; }
         p { margin-bottom: 15px; }
         
+        /* Clinical Interests Grid */
+        .interests-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .interest-category ul { padding-left: 20px; margin-top: 0; }
+        .interest-category li { margin-bottom: 5px; font-size: 0.95rem; }
+
+        /* Locations Grid */
+        .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .location-card { background: #f4f6f8; padding: 20px; border-radius: 6px; border-left: 4px solid var(--secondary); display: flex; flex-direction: column; }
+        .location-card h4 { margin: 0 0 10px 0; color: var(--primary); }
+        .location-card p { margin: 0; font-size: 0.95rem; line-height: 1.5; }
+        .location-card .btn-book { margin-top: 15px; text-align: center; }
+        
+        /* Publication List Styling */
+        ol.pub-list { padding-left: 20px; color: #444; }
+        ol.pub-list li { margin-bottom: 15px; padding-left: 5px; font-size: 0.95rem; }
+        ol.pub-list li strong { color: var(--primary); }
+
         /* Footer */
         footer { text-align: center; padding: 20px; font-size: 0.9rem; color: #666; }
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
             h1 { font-size: 1.8rem; }
+            .interests-grid, .location-grid { grid-template-columns: 1fr; }
             section { padding: 20px; }
+            .cta-container { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 300px; text-align: center; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Trevor Simcox, MD</h1>
+        <h1>TREVOR SIMCOX, MD</h1>
         <div class="credentials">Assistant Professor | Orthopedic Surgery</div>
         <div class="sub-header">Reconstructive Shoulder &bull; Sports Medicine &bull; Elbow Specialist</div>
         
         <div class="cta-container">
-            <a href="tel:7134867500" class="btn">Call for Appointment: 713-486-7500</a>
+            <a href="https://med.uth.edu/ortho/apptnow/" target="_blank" class="btn btn-book">Book Appointment Online</a>
+            <a href="tel:7134865750" class="btn">Cypress: 713-486-5750</a>
+            <a href="tel:7134868800" class="btn">The Woodlands: 713-486-8800</a>
         </div>
     </header>
 
@@ -105,6 +160,102 @@
                 <p>As a fellowship-trained Shoulder and Elbow specialist, Dr. Simcox has expertise in both non-operative and operative treatments, focusing on personalized care tailored to each patient’s unique needs. He addresses a wide range of orthopedic issues, from common to complex, with a particular interest in sports-related injuries, trauma, and both primary and revision shoulder and elbow joint replacements. Dr. Simcox is proficient in arthroscopic (minimally invasive) as well as open surgical procedures.</p>
             </section>
 
+            <section id="clinical-interests">
+                <h2>Clinical Interests</h2>
+                
+                <div class="interests-grid">
+                    <div class="interest-column">
+                        <div class="interest-category">
+                            <h3>Shoulder: Sports-Related Injuries</h3>
+                            <ul>
+                                <li>Non-operative treatment</li>
+                                <li>Care for throwing athletes</li>
+                                <li>Shoulder arthroscopic surgery (minimally invasive)</li>
+                                <li>Rotator cuff repair</li>
+                                <li>Biceps tendonitis and tear/rupture</li>
+                                <li>Shoulder instability (dislocations)</li>
+                                <li>Shoulder labral tears</li>
+                                <li>Shoulder tendon transfer</li>
+                                <li>Shoulder stiffness and adhesive capsulitis (frozen shoulder)</li>
+                                <li>Open instability reconstruction (bone graft)</li>
+                            </ul>
+                        </div>
+
+                        <div class="interest-category">
+                            <h3>Shoulder: Arthritis & Replacement</h3>
+                            <ul>
+                                <li>Non-operative treatment</li>
+                                <li>Comprehensive arthroscopic management (CAM)</li>
+                                <li>Anatomic shoulder replacement</li>
+                                <li>Reverse shoulder replacement</li>
+                                <li>Treatment of failed shoulder replacement</li>
+                                <li>Revision shoulder arthroplasty (re-do surgery)</li>
+                                <li>Periprosthetic fractures (fractures around replacement)</li>
+                                <li>Shoulder joint infections</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="interest-column">
+                        <div class="interest-category">
+                            <h3>Shoulder: Trauma</h3>
+                            <ul>
+                                <li>AC joint separation</li>
+                                <li>Clavicle (collarbone), scapula (shoulder-blade), and humerus fractures</li>
+                            </ul>
+                        </div>
+
+                        <div class="interest-category">
+                            <h3>Elbow & Forearm</h3>
+                            <ul>
+                                <li>Sports elbow injuries</li>
+                                <li>Tommy John Surgery – Ulnar collateral ligament reconstruction and repair with internal brace</li>
+                                <li>Biceps and other tendon ruptures</li>
+                                <li>Elbow arthroscopy (minimally invasive)</li>
+                                <li>Elbow cartilage problems</li>
+                                <li>Elbow ligament tears & ruptures</li>
+                                <li>Elbow instability (dislocations)</li>
+                                <li>Elbow stiffness</li>
+                                <li>Elbow arthritis</li>
+                                <li>Elbow replacement</li>
+                                <li>Tennis/golfer’s elbow</li>
+                                <li>Ulnar nerve compression (Cubital Tunnel Syndrome)</li>
+                                <li>Elbow fractures</li>
+                                <li>Forearm fractures</li>
+                                <li>Distal radius fractures</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="locations">
+                <h2>Practice Locations</h2>
+                <div class="location-grid">
+                    <div class="location-card">
+                        <h4>UT Ortho at Cypress</h4>
+                        <p><strong>MH Cypress Medical Plaza 1</strong></p>
+                        <p>27700 Northwest Freeway Suite 200</p>
+                        <p>Cypress, TX 77433</p>
+                        <br>
+                        <p><strong>Phone:</strong> <a href="tel:7134865750">713-486-5750</a></p>
+                        <p><strong>Fax:</strong> 713-486-0871</p>
+                        <a href="https://med.uth.edu/ortho/apptnow/" target="_blank" class="btn btn-book">Book Online</a>
+                    </div>
+                    
+                    <div class="location-card">
+                        <h4>UT Ortho at Memorial Hermann</h4>
+                        <p><strong>Rockets Sports Medicine Institute – The Woodlands</strong></p>
+                        <p>9305 Pinecroft Drive, Suite 400</p>
+                        <p>The Woodlands, Texas 77380</p>
+                        <br>
+                        <p><strong>Phone:</strong> <a href="tel:7134868800">713-486-8800</a></p>
+                        <p><strong>Fax:</strong> 281-367-1323</p>
+                        <a href="https://med.uth.edu/ortho/apptnow/" target="_blank" class="btn btn-book">Book Online</a>
+                    </div>
+                </div>
+            </section>
+
             <section id="education">
                 <h2>Education & Training</h2>
                 <p>Dr. Simcox earned his undergraduate degree from the <strong>University of California, Los Angeles</strong>, and completed his medical education at the <strong>Keck School of Medicine of the University of Southern California</strong>. There, he was elected to the prestigious Alpha Omega Alpha honor medical society, recognizing the top 10% of his class.</p>
@@ -114,11 +265,85 @@
                 <p>During his fellowship, he gained advanced training in complex open shoulder and elbow surgery, primary and revision joint replacements, and sports medicine while working alongside the Florida Gators’ team physicians. Notably, the University of Florida Health System is one of only three National Medical Centers within the U.S. Olympic & Paralympic Medical Network, providing Dr. Simcox with the opportunity to work in an elite medical environment dedicated to the highest standards of athletic care.</p>
             </section>
 
-            <section id="research">
+            <section id="research-interests">
                 <h2>Research & Associations</h2>
                 <p>As a member of several professional organizations, including the American Academy of Orthopedic Surgeons (AAOS) and the American Shoulder and Elbow Surgeons Society (ASES), Dr. Simcox has contributed significantly to the field through over 30 research publications, a textbook chapter, and presentations at both national and international conferences.</p>
-                
                 <p>His research interests include scapula spine and acromion fractures following reverse shoulder replacement, robotic and computer-assisted surgery, and sports-related elbow injuries.</p>
+            </section>
+
+            <section id="publications">
+                <h2>Peer-Reviewed Publications</h2>
+                <ol class="pub-list">
+                    <li><strong>Simcox TG</strong>, Tishad A, Popp R, Cruz JD, DelliCarpini G, King JJ, Wright JO, Wright TW, Roach RP. Understanding the Carbon Footprint of the American Academy of Orthopaedic Surgeons Annual Meeting. Orthopedics. 2025 Sep-Oct;48(5):e193-e199. doi: 10.3928/01477447-20250731-01. Epub 2025 Aug 22. PMID: 40844472.</li>
+                    
+                    <li>Hao KA, <strong>Simcox TG</strong>, Hones KM, Wright JO, Wright TW, LaMonica T, Schoch BS, King JJ. Conversion of Failed Anatomic Total Shoulder Arthroplasty to Reverse Shoulder Arthroplasty Yields Similar Pain and Functional Outcomes to Primary Reverse Shoulder Arthroplasty But has a Higher Baseplate Failure Rate: A Matched Cohort Study. J Am Acad Orthop Surg. 2025 Oct 15;33(20):e1215-e1225. doi: 10.5435/JAAOS-D-24-01296. Epub 2025 Jun 20. PMID: 40560743.</li>
+                    
+                    <li>Tariq MB, <strong>Simcox T</strong>, Becker J, Petrizzo A, Hishmeh S. What Provides the Best Value for Your Time in Spine Surgery? An Analysis of Relative Value Units. Clin Spine Surg. 2025 Jun 1;38(5):254-257. doi: 10.1097/BSD.0000000000001771. Epub 2025 Feb 17. PMID: 39960480.</li>
+                    
+                    <li>Hones KM, Gutowski CT, Rakauskas TR, Bindi VE, <strong>Simcox T</strong>, Wright JO, Schoch BS, Wright TW, Werthel JD, King JJ, Hao KA. Outcomes of lateralized reverse total shoulder arthroplasty versus latissimus dorsi transfer for external rotation deficit: a systematic review and meta-analysis. Clin Shoulder Elb. 2024 Dec;27(4):464-478. doi: 10.5397/cise.2024.00304. Epub 2024 Nov 15. PMID: 39558567; PMCID: PMC11615459.</li>
+                    
+                    <li>Amador IE, Hao KA, Buchanan TR, Damrow DS, Hones KM, <strong>Simcox T</strong>, Schoch BS, Farmer KW, Wright TW, LaMonica TJ, King JJ, Wright JO. The effect of smoking on functional outcomes and implant survival of anatomical total shoulder arthroplasty. Bone Joint J. 2024 Nov 1;106-B(11):1263-1272. doi: 10.1302/0301-620X.106B11.BJJ-2024-0202.R1. PMID: 39481428.</li>
+                    
+                    <li>Damrow DS, Buchanan TR, Hao KA, Amador IE, Hones KM, <strong>Simcox T</strong>, Schoch BS, Farmer KW, Wright TW, LaMonica TJ, King JJ, Wright JO. The effect of smoking on outcomes of reverse total shoulder arthroplasty. J Shoulder Elbow Surg. 2025 Apr;34(4):987-996. doi: 10.1016/j.jse.2024.07.052. Epub 2024 Sep 25. PMID: 39332471.</li>
+                    
+                    <li>Khlopas A, Wright LT, Hao KA, Reddy A, Beason A, <strong>Simcox T</strong>, King JJ, Wright JO, Schoch BS, Farmer KW, Wright TW. The effect of socioeconomic status on clinical outcomes and implant survivorship after primary anatomic and reverse total shoulder arthroplasty. J Shoulder Elbow Surg. 2025 Jan;34(1):390-400. doi: 10.1016/j.jse.2024.08.013. Epub 2024 Sep 24. PMID: 39326656.</li>
+                    
+                    <li><strong>Simcox TG</strong>, Hao KA, Dada O, Beason AM, Khlopas A, Farmer KW, King JJ, Schoch BS, Wright TW, Struk AM, Wright JO. Survivorship and clinical outcomes of reverse total shoulder arthroplasty in patients with large glenoid defects using the stilting technique and a baseplate with central ingrowth cage and peripheral locking screws. J Shoulder Elbow Surg. 2025 Apr;34(4):1071-1080. doi: 10.1016/j.jse.2024.07.036. Epub 2024 Sep 11. PMID: 39270773.</li>
+                    
+                    <li>Hones KM, <strong>Simcox T</strong>, Hao KA, Portnoff B, Buchanan TR, Kamarajugadda S, Kim J, Wright JO, King JJ, Wright TW, Schoch BS, Aibinder WR. Graft choice and techniques used in elbow ulnar collateral ligament reconstruction over the last 20 years: a systematic review and meta-analysis. J Shoulder Elbow Surg. 2024 May;33(5):1185-1199. doi: 10.1016/j.jse.2023.10.023. Epub 2023 Dec 9. PMID: 38072032.</li>
+                    
+                    <li><strong>Simcox T</strong>, Papalia AG, Passano B, Anil U, Lin C, Mitchell W, Zuckerman JD, Virk MS. Comparison of trends of inpatient charges among primary and revision shoulder arthroplasty over a decade: a regional database study. JSES Int. 2023 Sep 11;7(6):2492-2499. doi: 10.1016/j.jseint.2023.08.001. PMID: 37969516; PMCID: PMC10638600.</li>
+                    
+                    <li>Papalia AG, Romeo PV, Gambhir N, Alben MG, Chowdhury T, <strong>Simcox T</strong>, Rokito A, Virk MS. Effects of increased body mass index on one year outcomes following soft tissue arthroscopic shoulder instability repair. JSES Int. 2023 May 27;7(5):730-736. doi: 10.1016/j.jseint.2023.05.007. PMID: 37719813; PMCID: PMC10499852.</li>
+                    
+                    <li>Papalia AG, Kingery MT, Romeo PV, Alben MG, Lin CC, <strong>Simcox TG</strong>, Zuckerman JD, Virk MS. Trends in the treatment of proximal humerus fractures from 2010 to 2020. J Shoulder Elbow Surg. 2024 Feb;33(2):e49-e57. doi: 10.1016/j.jse.2023.07.038. Epub 2023 Sep 1. PMID: 37659703.</li>
+                    
+                    <li>Papalia AG, Kingery MT, Romeo PV, <strong>Simcox T</strong>, Lin CC, Anil U, Zuckerman JD, Virk MS. Inpatient charges, complication, and revision rates for shoulder arthroplasty in Parkinson disease: a regional database study. J Shoulder Elbow Surg. 2023 Oct;32(10):2043-2050. doi: 10.1016/j.jse.2023.04.003. Epub 2023 May 22. PMID: 37224916.</li>
+                    
+                    <li><strong>Simcox T</strong>, Singh V, Ayres E, Macaulay W, Schwarzkopf R, Aggarwal VK, Hepinstall MS. Selective Use of Dual-Mobility Did Not Significantly Reduce 90-Day Readmissions or Reoperations After Total Hip Arthroplasty. J Arthroplasty. 2023 Jul;38(7S):S136-S141. doi: 10.1016/j.arth.2023.04.008. Epub 2023 Apr 15. PMID: 37068565.</li>
+                    
+                    <li><strong>Simcox TG</strong>, Singh V, Tesoriero J, DelliCarpini G, Virk MS, Zouzias I, Grossman MG. Is fantasy baseball score a viable outcome measure for professional baseball pitchers after undergoing Tommy John surgery? JSES Int. 2022 Oct 29;7(1):186-191. doi: 10.1016/j.jseint.2022.09.018. PMID: 36820415; PMCID: PMC9937851.</li>
+                    
+                    <li>Passano B, <strong>Simcox T</strong>, Singh V, Anil U, Schwarzkopf R, Davidovitch RI. Does Surgical Approach to the Hip Play a Role in Same-Day Discharge Outcomes? J Arthroplasty. 2023 Jul;38(7 Suppl 2):S294-S299. doi: 10.1016/j.arth.2022.12.042. Epub 2023 Jan 3. PMID: 36608836.</li>
+                    
+                    <li><strong>Simcox T</strong>, Singh V, Oakley CT, Barzideh OS, Schwarzkopf R, Rozell JC. A comparison of utilization and short-term complications of technology-assisted versus conventional total knee arthroplasty. Knee Surg Relat Res. 2022 Mar 18;34(1):14. doi: 10.1186/s43019-022-00143-5. PMID: 35303957; PMCID: PMC8932132.</li>
+                    
+                    <li>Singh V, Realyvasquez J, <strong>Simcox T</strong>, Lajam CM, Schwarzkopf R, Davidovitch RI. A Formal Same-Day Discharge Total Joint Arthroplasty Program May Not Be Necessary: A Propensity-Matched Cohort Study. J Arthroplasty. 2022 Aug;37(8S):S823-S829. doi: 10.1016/j.arth.2022.02.081. Epub 2022 Feb 25. PMID: 35219819.</li>
+                    
+                    <li><strong>Simcox T</strong>, Singh V, Oakley CT, Koenig JA, Schwarzkopf R, Rozell JC. Comparison of Utilization and Short-term Complications Between Technology-assisted and Conventional Total Hip Arthroplasty. J Am Acad Orthop Surg. 2022 Apr 15;30(8):e673-e682. doi: 10.5435/JAAOS-D-21-00698. PMID: 35139053.</li>
+                    
+                    <li><strong>Simcox T</strong>, Safi S, Becker J, Kreinces J, Wilson A. Are Orthopedic Hand Surgeons Undercompensated for Time Spent in the Operating Room? A Study of Relative Value Units. Hand (N Y). 2023 Jul;18(5):861-867. doi: 10.1177/15589447211064361. Epub 2022 Jan 7. PMID: 34991363; PMCID: PMC10336817.</li>
+                    
+                    <li><strong>Simcox T</strong>, Kreinces J, Tarazona D, Zouzias I, Grossman M. Current Relative Value Unit Scale Does Not Appropriately Compensate for Longer Orthopedic Sports Surgeries. Arthrosc Sports Med Rehabil. 2021 Oct 30;3(6):e1913-e1920. doi: 10.1016/j.asmr.2021.09.009. PMID: 34977648; PMCID: PMC8689253.</li>
+                    
+                    <li><strong>Simcox T</strong>, Becker J, Kreinces J, Islam S, Grossman M, Gould J. Are Orthopaedic Trauma Surgeons Adequately Compensated for Longer Procedures? An Analysis of Relative Value Units and Operative Times From the American College of Surgeons National Surgical Quality Improvement Program Database. J Orthop Trauma. 2021 Dec 1;35(12):e458-e462. doi: 10.1097/BOT.0000000000002105. PMID: 34369456.</li>
+                    
+                    <li><strong>Simcox T</strong>, Tarazona D, Becker J, Ayres E, Gould J. Improved Implant Positioning of Cephalomedullary Nail for Trochanteric Fractures Using the Stryker ADAPT Navigation System. Injury. 2021 Nov;52(11):3404-3407. doi: 10.1016/j.injury.2021.07.021. Epub 2021 Jul 15. PMID: 34311957.</li>
+                    
+                    <li>Singh V, Fiedler B, <strong>Simcox T</strong>, Aggarwal VK, Schwarzkopf R, Meftah M. Response to Letter to the Editor on "Does the Use of Intraoperative Technology Yield Superior Patient Outcomes Following Total Knee Arthroplasty?". J Arthroplasty. 2021 Jul;36(7):e70-e71. doi: 10.1016/j.arth.2020.12.042. PMID: 34116774.</li>
+                    
+                    <li><strong>Simcox T</strong>, Seo L, Dunham K, Huang S, Petchprapa C, Wollstein R. Palmar Musculature: Does It Affect the Development of Carpal Tunnel Syndrome? A Pilot Study. J Wrist Surg. 2021 Jun;10(3):196-200. doi: 10.1055/s-0040-1721437. Epub 2021 Jan 3. PMID: 34109061; PMCID: PMC8169161.</li>
+                    
+                    <li>Singh V, Realyvasquez J, <strong>Simcox T</strong>, Rozell JC, Schwarzkopf R, Davidovitch RI. Robotics Versus Navigation Versus Conventional Total Hip Arthroplasty: Does the Use of Technology Yield Superior Outcomes? J Arthroplasty. 2021 Aug;36(8):2801-2807. doi: 10.1016/j.arth.2021.02.074. Epub 2021 Mar 5. PMID: 33773864.</li>
+                    
+                    <li>Singh V, <strong>Simcox T</strong>, Aggarwal VK, Schwarzkopf R, Long WJ. Comparative Analysis of Total Knee Arthroplasty Outcomes Between Arthroplasty and Nonarthroplasty Fellowship Trained Surgeons. Arthroplast Today. 2021 Feb 26;8:40-45. doi: 10.1016/j.artd.2021.01.007. PMID: 33718554; PMCID: PMC7921708.</li>
+                    
+                    <li>Singh V, Yeroushalmi D, Lygrisse KA, <strong>Simcox T</strong>, Long WJ, Schwarzkopf R. The influence of obesity on achievement of a 'forgotten joint' following total knee arthroplasty. Arch Orthop Trauma Surg. 2022 Mar;142(3):491-499. doi: 10.1007/s00402-021-03840-0. Epub 2021 Mar 4. PMID: 33661386.</li>
+                    
+                    <li>Singh V, Fiedler B, <strong>Simcox T</strong>, Aggarwal VK, Schwarzkopf R, Meftah M. Does the Use of Intraoperative Technology Yield Superior Patient Outcomes Following Total Knee Arthroplasty? J Arthroplasty. 2021 Jul;36(7S):S227-S232. doi: 10.1016/j.arth.2020.11.001. Epub 2020 Nov 6. PMID: 33277145.</li>
+                    
+                    <li>Lepkowsky E, <strong>Simcox T</strong>, Rogoff H, Barzideh O, Islam S. Is There a Role for CT Pan-Scans in the Initial Workup of Fragility Fracture Patients? Geriatr Orthop Surg Rehabil. 2020 Apr 8;11:2151459320916937. doi: 10.1177/2151459320916937. PMID: 32313714; PMCID: PMC7153176.</li>
+                    
+                    <li>Heckmann N, <strong>Simcox T</strong>, Kelley D, Marecek GS. Wound Irrigation for Open Fractures. JBJS Rev. 2020 Jan;8(1):e0061. doi: 10.2106/JBJS.RVW.19.00061. PMID: 32105234.</li>
+                    
+                    <li><strong>Simcox T</strong>, Antoku D, Jain N, Acosta F, Hah R. Frailty Syndrome and the Use of Frailty Indices as a Preoperative Risk Stratification Tool in Spine Surgery: A Review. Asian Spine J. 2019 Jun 3;13(5):861-873. doi: 10.31616/asj.2018.0239. PMID: 31154707; PMCID: PMC6773997.</li>
+                    
+                    <li>Manzur M, Ochoa C, Ham SW, Lee W, <strong>Simcox T</strong>, Rowe V, Weaver F. Surgical Management of Perforated Inferior Vena Cava Filters. Ann Vasc Surg. 2017 Jul;42:25-31. doi: 10.1016/j.avsg.2016.11.005. Epub 2017 Mar 7. PMID: 28279719.</li>
+                    
+                    <li>Manzur MF, Ham SW, Elsayed R, Abdoli S, <strong>Simcox T</strong>, Han S, Rowe V, Weaver FA. Vascular surgery: An essential hospital resource in modern health care. J Vasc Surg. 2017 Jun;65(6):1786-1792. doi: 10.1016/j.jvs.2016.12.126. Epub 2017 Mar 1. PMID: 28259572.</li>
+                    
+                    <li>Hirshorn EA, <strong>Simcox T</strong>, Durisko C, Perfetti CA, Fiez JA. Unmasking individual differences in adult reading procedures by disrupting holistic orthographic perception. PLoS One. 2020 May 26;15(5):e0233041. doi: 10.1371/journal.pone.0233041. PMID: 32453792; PMCID: PMC7250424.</li>
+                </ol>
             </section>
 
             <section id="personal">
